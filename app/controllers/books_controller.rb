@@ -2,6 +2,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @user = Book.user
   end
 
   def index
@@ -40,6 +41,7 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destoy
+    flash[:notice] = "book was successfully destroyed."
     redirect_to books_path
   end
 
