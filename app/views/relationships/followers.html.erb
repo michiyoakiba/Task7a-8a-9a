@@ -1,5 +1,10 @@
 <h2>Follower User</h2>
-<table class='table'>
+
+  <% if @follower_users.empty? %>
+    <span>ユーザーはいません</span>
+  <% else%>
+    
+    <table class='table'>
       <thead>
         <tr>
           <th>Image</th>
@@ -31,4 +36,5 @@
           </tr>
         <% end %>
         </tbody>
-    </table> 
+      </table>
+    <% end %>
