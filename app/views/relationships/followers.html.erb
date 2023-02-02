@@ -22,16 +22,8 @@
               <% end %>
             </td>
             <td><%= user.name %></td>
-            <td>
-              <%= link_to user_followers_path(user) do %>
-                <h6>フォロー<%= user.followers.count %></h6>
-              <% end %>
-            </td>
-            <td>  
-              <%= link_to user_followings_path(user) do %>
-                <h6>フォロワー<%= user.followings.count %></h6>
-              <% end %>
-            </td>
+            <td>フォロー数:<%= user.followings.count %></td>
+            <td>フォロワー数:<%= user.followers.count %></td>
             <td><%= link_to 'Show', user %></td>
           </tr>
         <% end %>
