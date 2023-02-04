@@ -1,32 +1,7 @@
 <h2>Follower User</h2>
-
-  <% if @follower_users.empty? %>
-    <span>ユーザーはいません</span>
-  <% else%>
+ <% if @users.exists? %>
+  <%= render '/users/index', users: @users %>  
+ <% else%>
+  <p>ユーザーはいません</p> 
+ <% end %>
     
-    <table class='table'>
-      <thead>
-        <tr>
-          <th>Image</th>
-          <th>name</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @follower_users.each do |user| %>
-          <tr>
-            <td>
-              <%= link_to user_path(user) do %>
-                <%= image_tag user.get_profile_image, size:'50x50' %>
-              <% end %>
-            </td>
-            <td><%= user.name %></td>
-            <td>フォロー数:<%= user.followings.count %></td>
-            <td>フォロワー数:<%= user.followers.count %></td>
-            <td><%= link_to 'Show', user %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    <% end %>
