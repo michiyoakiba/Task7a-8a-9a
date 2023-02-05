@@ -10,5 +10,5 @@ before_action :authenticate_user!
 		else
 			@records = Book.search_for(@content, @method)
 		end
-	end
+  end
 end
